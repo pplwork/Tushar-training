@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px 40px;
+        }
+        .result{
+            display: none;
+            flex-direction: column;
+            align-items: left;
+        }
+        .field{
+            padding: 10px 0px;
+        }
+        .confirmField{
+            padding: 10px 0px;
+        }
+        #confirm-btn{
+            width:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Form</h2>
+        <form onsubmit="return validateForm()" id="myform">
+            <div class="field">
+                <label for="email">Email Address : </label>
+                <input type="text" id="email" placeholder="Enter email address">
+                <span id="emailidvalidator"></span>
+            </div>
+            <div class="field">
+                <label for="email">Password : </label>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+            <div class="field">
+                <label for="gender">Gender : </label>
+                <select id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="field" id="role">
+                <p>Select Role:</p>
+                <label for="role_user">User</label>
+                <input type="radio" value="User" name="role" id="role_user" checked>
+                <label for="role_admin">Admin</label>
+                <input type="radio" value="Admin" name="role" id="role_admin">
+            </div>
+            <div class="field">
+                <p>Allow permissions:</p>
+                <input type="checkbox" id="perm1" name="Perm1">
+                <label for="perm1">Perm1</label>
+                <input type="checkbox" id="perm2" name="Perm2">
+                <label for="perm2">Perm2</label>
+                <input type="checkbox" id="perm3" name="Perm3">
+                <label for="perm3">Perm3</label>
+                <input type="checkbox" id="perm4" name="Perm4">
+                <label for="perm4">Perm4</label><br>
+            </div>
+            <h4 id="error"></h4>
+            <input type="submit">
+        </form>
+        <div class="result">
+            <div  class="confirmField">
+                <span><b>Email Address : </b></span>
+                <span id="confirmEmail"></span>
+            </div>
+            <div class="confirmField">
+                <span><b>Password : </b></span>
+                <span id="confirmPassword"></span>
+            </div>
+            <div class="confirmField">
+                <span><b>Gender : </b></span>
+                <span id="confirmGender"></span>
+            </div>
+            <div class="confirmField">
+                <span><b>Role : </b></span>
+                <span id="confirmRole"></span>
+            </div>
+            <div class="confirmField">
+                <span><b>Permissions : </b></span>
+                <span id="confirmPermissions"></span>
+            </div>
+            <input type="submit" value="Confirm" id="confirm-btn">
+        </div>
+    </div>
+    <script>
+
+        //email validation using regex
+        function emailValidation(email) {
+            const pattern = /^[A-za-z_.0-9]{3,}@[A-Za-z]{3,}.[A-Za-z.]{3,}$/;
+            return pattern.test(email);
+        }
+
+        //password validation using regex
+        function passwordValidation(password) {
+            const patter = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+            return patter.test(password);
+        }
+
+        //validating form
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var permissions = document.querySelectorAll("input[type='checkbox']:checked");
+            if (!emailValidation(email)) {
+                document.getElementById("error").innerHTML = "Please enter a valid email address!";
+                return false;
+            }
+            else if (!passwordValidation(password)) {
+                document.getElementById("error").innerHTML = "Please enter a valid password!";
+                return false;
+            } else if (permissions.length < 2) {
+                document.getElementById("error").innerHTML = "Select at least two permissions!";
+                return false;
+            } else {
+                
+                document.getElementById('myform').style.display='none';
+                document.querySelector('.result').style.display = 'flex';
+
+                document.getElementById("confirmEmail").innerHTML = email;
+                document.getElementById("confirmPassword").innerHTML = password;
+                document.getElementById("confirmGender").innerHTML=document.getElementById("gender").value;
+                if(document.getElementById("role_admin").checked==true){
+                    document.getElementById("confirmRole").innerHTML=document.getElementById("role_admin").value;
+                }else{
+                    document.getElementById("confirmRole").innerHTML=document.getElementById("role_user").value;
+                }
+                permissions.forEach((perm)=>{
+                    document.getElementById("confirmPermissions").innerHTML+=` ${perm.name}`;
+                })
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
