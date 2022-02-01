@@ -27,16 +27,22 @@ app.post("/", (req, res) => {
 
 //to delete cat
 app.delete('/:cat_id', (req, res) => {
-    cats.cats = cats.cats.filter(cat => cat.cat_id !== req.params.cat_id);
-    res.send("cat deleted");
-    console.log(cats.cats);
+    try {
+        cats.cats = cats.cats.filter(cat => cat.cat_id !== req.params.cat_id);
+        res.status(200).send("cat deleted");
+        console.log(cats.cats);
+    }
+    catch(err){
+        res.status(500).send("Cat not found");
+        console.log("no cat deleted");
+    }
 })
 
 //to update a cat details
 app.put('/:cat_id', (req, res) => {
-    const { name, age, breed ,cat_id} = req.body;
+    const { name, age, breed, cat_id } = req.body;
     cats.cats = cats.cats.map((cat) => {
-        return cat.cat_id===req.params.cat_id?{name,age,breed,cat_id}:cat;
+        return cat.cat_id === req.params.cat_id ? { name, age, breed, cat_id } : cat;
     })
     res.send("cat updated");
     console.log(cats.cats);
