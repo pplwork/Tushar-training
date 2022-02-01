@@ -1,0 +1,128 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  height:60px;
+  background-color: azure;
+  box-shadow: 0 1px 5px rgb(236, 236, 236);
+}
+.navbar .head{
+  margin-left: 100px;
+  cursor: pointer;
+  font-weight: bold ;
+}
+.navbar .links{
+  margin-right: 100px;
+}
+.navbar a{
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar a:hover{
+  color: rgb(89, 160, 160);
+}
+
+.home{
+  margin:10px 100px;
+}
+
+.blog{
+  padding:20px 0px;
+}
+
+.blog-link{
+  text-decoration: none;
+  color: black;
+}
+
+.delete-button{
+  margin:5px 0px;
+  padding: 5px;;
+  background-color: white;
+  border: 1px solid rgb(119, 207, 207);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-button:hover{
+  background-color:rgb(119, 207, 207);
+  color: white;
+  transition: all ease 0.25s;
+}
+
+.blog-details{
+  margin:20px 100px;
+}
+
+
+.blog-details .blog-author{
+  margin:20px 0px;
+}
+
+.add-blog{
+  margin:20px 100px;
+}
+
+.add-form{
+  display: flex;
+  width:50%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-form input{
+  padding:5px;
+  margin:5px 0px;
+  border: 1px solid rgb(60, 161, 161);
+  border-radius: 3px;
+  background-color: white;
+  outline: none;
+}
+
+.add-form select{
+  width: 150px;
+  margin: 10px 0px;
+  padding: 5px;
+  border: 1px solid rgb(60, 161, 161);
+  border-radius: 3px;
+  background-color: white;
+  outline: none;
+}
+
+.add-form textarea{
+  margin: 10px 0px;
+  padding: 5px;
+  border: 1px solid rgb(60, 161, 161);
+  border-radius: 5px;
+  height:200px;
+  background-color: white;
+  resize: none;
+  outline: none;
+}
+
+.add-form button{
+  width: 100px;
+  margin:20px 0px;
+  border:none;
+  border-radius: 5px;
+  color:white;
+  background-color:  rgb(60, 161, 161);
+  padding: 5px;
+  cursor: pointer;
+  transition: all ease 0.25s;
+}
+
+.add-form button:hover{
+  background-color: white;
+  color:rgb(60, 161, 161);
+  border: 1px solid black;
+}
