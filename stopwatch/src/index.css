@@ -102,7 +102,6 @@ td{
 .tablewrap{
   max-height: 500px;
   overflow-y: auto;
-  position: relative;
   width: 50%;
 }
 

@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Clock from './Clock';
+import Button from './Button';
+import Laps from './Laps';
 function Home() {
     const [isStart, setIsStart] = React.useState(false);
     const [secs, setSecs] = React.useState(0);
@@ -50,49 +52,16 @@ function Home() {
     }
     return <div className='home'>
         <div className='Left'>
-            <h1 className='time'>{`0${mins}`.slice(-2)} : {`0${secs}`.slice(-2)} : {`0${milsecs}`.slice(-2)}</h1>
+            <Clock minutes={`0${mins}`.slice(-2)} seconds={`0${secs}`.slice(-2)} milseconds={`0${milsecs}`.slice(-2)} />
             <div className='buttons'>
-                <button className="lap-btn" onClick={handleLap} disabled={!isStart}>Lap</button>
-                {!isStart && <button className="start-btn" onClick={() => { handleStart(isStart) }}>Start</button>}
-                {isStart && <button className="stop-btn" onClick={() => { handleStart(isStart) }}>Stop</button>}
-                <button className="lap-btn" onClick={handleReset} disabled={isStart}>Reset</button>
-
+                <Button className="lap-btn" onClick={handleLap} disabled={!isStart} buttonName="Lap" />
+                {!isStart && <Button className="start-btn" onClick={() => handleStart(isStart)} disabled={false} buttonName="Start" />}
+                {isStart && <Button className="stop-btn" onClick={() => { handleStart(isStart) }} disabled={false} buttonName="Stop" />}
+                <Button className="lap-btn" onClick={handleReset} disabled={isStart} buttonName="Reset" />
             </div>
         </div>
         <div className='Right'>
-            <div className='tablewrap'>
-                {
-                    laps.length !== 0 &&
-                    <table>
-                        <thead><tr><th>LAP</th><th>LAP TIMING</th><th>OVERALL TIME</th></tr></thead>
-                        <tbody>
-                            {
-                                laps.map((lap, index) => {
-                                    var lapTimeString = "";
-                                    if (index - 1 >= 0) {
-                                        const prevTime = laps[index - 1].milsecs + laps[index - 1].secs * 100 + laps[index - 1].mins * 10000;
-                                        const curTime = lap.milsecs + lap.secs * 100 + lap.mins * 10000;
-                                        const laptime = curTime - prevTime;
-                                        lapTimeString = ("000000" + laptime.toString()).slice(-6);
-                                    }
-
-                                    return (
-                                        <tr>
-                                            <td>{index + 1}</td>
-                                            {
-                                                index - 1 >= 0 ?
-                                                    <td>{lapTimeString.slice(lapTimeString.length - 6, lapTimeString.length - 4)} : {lapTimeString.slice(lapTimeString.length - 4, lapTimeString.length - 2)} : {lapTimeString.slice(lapTimeString.length - 2, lapTimeString.length)}</td> :
-                                                    <td>{`0${lap.mins}`.slice(-2)} : {`0${lap.secs}`.slice(-2)} : {`0${lap.milsecs}`.slice(-2)}</td>
-                                            }
-                                            <td>{`0${lap.mins}`.slice(-2)} : {`0${lap.secs}`.slice(-2)} : {`0${lap.milsecs}`.slice(-2)}</td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </table>
-                }
-            </div>
+            <Laps laps={laps}/>
         </div>
     </div>;
 }
