@@ -1,0 +1,45 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/utilities";
+@import "base/typography";
+
+@import "pages/home";
+
+@import "components/button";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+@import "components/bg-video";
+@import "components/story";
+@import "components/form";
+@import "components/popup";
+@import "layouts/header";
+@import "layouts/grid";
+@import "layouts/navigation";
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color:$color-gray;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
