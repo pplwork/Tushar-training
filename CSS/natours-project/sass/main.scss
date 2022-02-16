@@ -20,26 +20,7 @@
 @import "layouts/header";
 @import "layouts/grid";
 @import "layouts/navigation";
+@import "layouts/_footer";
 
-*,
-*::after,
-*::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
 
-html{
-    font-size: 62.5%;
-}
-
-body{
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color:$color-gray;
-    padding: 3rem;
-    box-sizing: border-box;
-}
 

@@ -16,6 +16,10 @@
         display: block;
         transition: all ease 0.3s;
 
+        @include respond(tab-port){
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
         &::-webkit-input-placeholder{
             color:#999;
         }
@@ -48,11 +52,17 @@
 
     &__radio-input{
         display: none;
+
     }
 
     &__radio-group{
         width:40%;
         display: inline-block;
+
+        @include respond(tab-port){
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-label{
