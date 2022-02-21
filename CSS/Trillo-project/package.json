@@ -1,0 +1,14 @@
+{
+    "name": "trillo-project",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    },
+    "author": "Tushar-Jha",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+      "node-sass": "^7.0.1"
+    }
+  }
