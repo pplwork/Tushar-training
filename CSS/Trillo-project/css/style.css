@@ -15,11 +15,6 @@
   margin: 0;
   padding: 0; }
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit; }
-
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
@@ -27,7 +22,6 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.6;
   color: var(--color-grey-dark-2);
   background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
   background-size: cover;
@@ -35,8 +29,8 @@ body {
 
 .icon {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor; }
@@ -69,13 +63,16 @@ body {
 .hotel-view {
   background-color: #fff;
   flex: 1;
-  height: 80rem; }
+  height: 80rem;
+  display: flex;
+  flex-direction: column; }
 
 .details {
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
-  border-bottom: 1px solid var(--color-grey-light-2); }
+  border-bottom: 1px solid var(--color-grey-light-2);
+  flex: 1; }
 
 .description {
   font-size: 1.4rem;
@@ -86,8 +83,51 @@ body {
   margin-right: 4.5rem; }
 
 .user-reviews {
-  background-color: aqua;
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.review {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 1rem 5rem var(--color-grey-light-2);
+  padding: 3rem;
+  margin-bottom: 3.5rem; }
+  .review__text {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    z-index: 2; }
+  .review__user {
+    display: flex;
+    align-items: center; }
+  .review__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%; }
+  .review__user-box {
+    margin: auto; }
+  .review__user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem; }
+  .review__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3); }
+  .review__rating {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    font-weight: 300; }
+  .review::before {
+    content: "\201C";
+    font-size: 12rem;
+    font-family: sans-serif;
+    position: absolute;
+    top: -1.9rem;
+    left: -0.2rem;
+    color: var(--color-grey-light-2);
+    z-index: 1; }
 
 .logo {
   height: 5rem;
@@ -127,7 +167,9 @@ body {
     .search__button:active {
       transform: translateY(0.2rem); }
   .search__icon {
-    width: 2rem; }
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-grey-dark-2); }
 
 .user-nav {
   display: flex;
@@ -146,7 +188,8 @@ body {
       background-color: var(--color-grey-light-3); }
   .user-nav__icon {
     width: 2.5rem;
-    fill: blue; }
+    height: 2.5rem;
+    fill: var(--color-grey-dark-2); }
   .user-nav__notification {
     font-size: 0.8rem;
     height: 1.75rem;
@@ -178,7 +221,7 @@ body {
   .side-nav__item {
     position: relative; }
     .side-nav__item:not(:last-child) {
-      margin-bottom: .5rem; }
+      margin-bottom: 0.5rem; }
   .side-nav__item::before {
     content: "";
     position: absolute;
@@ -202,11 +245,10 @@ body {
     position: relative;
     z-index: 10;
     text-transform: uppercase;
-    display: block;
     padding: 1.5rem 3rem; }
   .side-nav__icon {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2rem;
+    height: 2rem;
     margin-right: 1rem; }
 
 .legal {
@@ -242,7 +284,8 @@ body {
     display: flex; }
   .overview__icon-star {
     width: 2rem;
-    height: 2rem; }
+    height: 2rem;
+    fill: var(--color-primary); }
   .overview__location {
     font-size: 1.2rem;
     display: flex;
@@ -274,15 +317,20 @@ body {
 .btn-inline {
   border: none;
   color: var(--color-primary);
-  font-size: inherit;
+  font-size: 1.4rem;
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
   display: inline-block;
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s; }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: all 0.2s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -312,6 +360,12 @@ body {
   .list__item {
     flex: 0 0 50%;
     margin-bottom: 0.7rem; }
+  .list__item::before {
+    content: "\02C3";
+    width: 1.5rem;
+    margin-right: 0.7rem;
+    height: 1.5rem;
+    fill: var(--color-primary); }
 
 .recommend {
   font-size: 1.3rem;
@@ -329,3 +383,51 @@ body {
     background-color: aqua; }
     .recommend__friends-photo:not(:last-child) {
       margin-right: -1.5rem; }
+
+.cta {
+  background-color: #fff;
+  padding: 3.5rem;
+  text-align: center; }
+  .cta__book-now {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem; }
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  transition: all 0.2s;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .btn__visible {
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    width: 40%;
+    padding: 2rem 7.5rem;
+    transition: all 0.2s; }
+  .btn__invisible {
+    display: inline-block;
+    position: absolute;
+    padding: 2rem 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: -100%;
+    transition: all 0.2s; }
+  .btn:hover {
+    background-image: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light)); }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }

@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <title>Trillo &mdash; Your all-in-one booking app</title>
 </head>
 
@@ -22,22 +25,16 @@
             <form action="#" class="search">
                 <input type="text" class="search__input" placeholder="Search Hotels">
                 <button class="search__button">
-                    <img src="images/SVG/magnifying-glass.svg" alt="" class="search__icon">
+                    <ion-icon name="search" class="search__icon"></ion-icon>
                 </button>
             </form>
             <nav class="user-nav">
                 <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon">
-                        <use xlink:href="images/sprite.svg#icon-bookmark"></use>
-                    </svg>
-                    <img src="images/SVG/bookmark.svg" alt="" class="user-nav__icon">
+                    <ion-icon name="bookmark" class="user-nav__icon"></ion-icon>
                     <span class="user-nav__notification">7</span>
                 </div>
                 <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon">
-                        <use xlink:href="images/sprites.svg#icon-home"></use>
-                    </svg>
-                    <img src="images/SVG/chat.svg" alt="" class="user-nav__icon">
+                    <ion-icon name="chatbubbles" class="user-nav__icon"></ion-icon>
                     <span class="user-nav__notification">13</span>
                 </div>
                 <div class="user-nav__user">
@@ -51,37 +48,25 @@
                 <ul class="side-nav">
                     <li class="side-nav__item side-nav__item--active">
                         <a href="#" class="side-nav__link">
-                            <svg class="side-nav__icon">
-                                <use xlink:href="images/sprites.svg#icon-home"></use>
-                            </svg>
-                            <img src="images/SVG/bookmark.svg" alt="" class="side-nav__icon">
+                            <ion-icon name="home" class="side-nav__icon"></ion-icon>
                             <span>Hotel</span>
                         </a>
                     </li>
                     <li class="side-nav__item">
                         <a href="#" class="side-nav__link">
-                            <svg class="side-nav__icon">
-                                <use xlink:href="images/sprites.svg#icon-home"></use>
-                            </svg>
-                            <img src="images/SVG/bookmark.svg" alt="" class="side-nav__icon">
+                            <ion-icon name="airplane" class="side-nav__icon"></ion-icon>
                             <span>Flight</span>
                         </a>
                     </li>
                     <li class="side-nav__item">
                         <a href="#" class="side-nav__link">
-                            <svg class="side-nav__icon">
-                                <use xlink:href="images/sprites.svg#icon-home"></use>
-                            </svg>
-                            <img src="images/SVG/bookmark.svg" alt="" class="side-nav__icon">
+                            <ion-icon name="car" class="side-nav__icon"></ion-icon>
                             <span>Car rental</span>
                         </a>
                     </li>
                     <li class="side-nav__item">
                         <a href="#" class="side-nav__link">
-                            <svg class="side-nav__icon">
-                                <use xlink:href="images/sprites.svg#icon-home"></use>
-                            </svg>
-                            <img src="images/SVG/bookmark.svg" alt="" class="side-nav__icon">
+                            <ion-icon name="map" class="side-nav__icon"></ion-icon>
                             <span>Tours</span>
                         </a>
                     </li>
@@ -107,15 +92,16 @@
                 <div class="overview">
                     <h1 class="overview__heading">Hotel Las Palmas</h1>
                     <div class="overview__stars">
-                        <img src="images/star-solid.svg" alt="" class="overview__icon-star">
-                        <img src="images/star-solid.svg" alt="" class="overview__icon-star">
-                        <img src="images/star-solid.svg" alt="" class="overview__icon-star">
-                        <img src="images/star-solid.svg" alt="" class="overview__icon-star">
-                        <img src="images/star-solid.svg" alt="" class="overview__icon-star">
+                        <ion-icon name="star" class="overview__icon-star"></ion-icon>
+                        <ion-icon name="star" class="overview__icon-star"></ion-icon>
+                        <ion-icon name="star" class="overview__icon-star"></ion-icon>
+                        <ion-icon name="star" class="overview__icon-star"></ion-icon>
+                        <ion-icon name="star" class="overview__icon-star"></ion-icon>
+
                     </div>
 
                     <div class="overview__location">
-                        <img src="images/location-dot-solid.svg" alt="" class="overview__icon-location">
+                        <ion-icon name="pin" class="overview__icon-location"></ion-icon>
                         <button class="btn-inline">New Delhi, India</button>
                     </div>
 
@@ -128,10 +114,13 @@
                 <div class="details">
                     <div class="description">
                         <p class="paragraph">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti eius, aperiam repellendus perferendis maiores adipisci neque unde enim fuga veritatis assumenda omnis consequatur nostrum deleniti.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti eius, aperiam repellendus
+                            perferendis maiores adipisci neque unde enim fuga veritatis assumenda omnis consequatur
+                            nostrum deleniti.
                         </p>
                         <p class="paragraph">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eos numquam accusamus pariatur nam consequuntur ratione voluptates?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eos numquam accusamus
+                            pariatur nam consequuntur ratione voluptates?
                         </p>
                         <ul class="list">
                             <li class="list__item">Close to beach</li>
@@ -157,8 +146,50 @@
                         </div>
                     </div>
                     <div class="user-reviews">
-                        user reviews
+                        <figure class="review">
+                            <blockquote class="review__text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia perferendis
+                                consectetur exercitationem maxime voluptatum, similique officiis natus velit pariatur?
+                            </blockquote>
+                            <figcaption class="review__user">
+                                <img src="images/user-1.png" alt="User 1" class="review__photo">
+                                <div class="review__user-box">
+                                    <p class="review__user-name">Nick Smith</p>
+                                    <p class="review__user-date">21st Feb, 2022</p>
+                                </div>
+                                <div class="review__rating">7.8</div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="review">
+                            <blockquote class="review__text">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo quibusdam sed esse, odio
+                                ut harum ipsam voluptate.
+                            </blockquote>
+                            <figcaption class="review__user">
+                                <img src="images/user-2.png" alt="User 2" class="review__photo">
+                                <div class="review__user-box">
+                                    <p class="review__user-name">John Nash</p>
+                                    <p class="review__user-date">22nd Jan, 2021</p>
+                                </div>
+                                <div class="review__rating">9.4</div>
+                            </figcaption>
+                        </figure>
+
+                        <button class="btn-inline">Show all <span>&rarr;</span></button>
                     </div>
+
+                   
+                </div>
+
+                <div class="cta">
+                    <h2 class="cta__book-now">
+                        Good news! We have 4 free rooms for your selected dates!
+                    </h2>
+                    <button class="btn">
+                        <span class="btn__visible">Book now</span>
+                        <span class="btn__invisible">Only 4 rooms left</span>
+                    </button>
                 </div>
             </main>
         </div>
