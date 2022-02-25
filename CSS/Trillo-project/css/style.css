@@ -63,6 +63,7 @@ body {
 .hotel-view {
   background-color: #fff;
   flex: 1;
+  height: 80rem;
   display: flex;
   flex-direction: column; }
 
