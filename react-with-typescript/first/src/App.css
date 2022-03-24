@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item{
+  list-style: none;
+  background-color: #61dafb;
+  width: 50%;
+  padding: 10px 0;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.list-item__name{
+  padding: 0 20px;
+  text-transform: uppercase;
+
+}
+
+.list-item__age{
+  padding: 0 20px;
+  color: blue;
+}
+
+.list-item__note{
+  padding: 0 20px;
+}
+
+.addToList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input{
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 3px;
+  width: 250px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.form-button{
+  width: 100px;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 3px;
+  cursor: pointer;
+}

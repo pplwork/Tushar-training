@@ -27,7 +27,7 @@ const useFetch = (url) => {
                 }
             });
 
-        return () => abortCont.abort();
+        return () => abortCont.abort(); // cleanup function
     }, [url]);
 
     return { data, pending, error };
