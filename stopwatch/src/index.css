@@ -41,7 +41,7 @@
 
 .start-btn{
   width:100px;
-  background-color: rgb(64, 139, 224);
+  background-color: #408be0;
   padding: 8px 25px;
   font-size: 20px;
   margin-top:20px;
@@ -53,7 +53,7 @@
 
 .stop-btn{
   width:100px;
-  background-color: rgb(238, 81, 53);
+  background-color: #ee5135;
   padding: 8px 25px;
   font-size: 20px;
   margin-top:20px;
